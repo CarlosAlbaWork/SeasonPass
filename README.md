@@ -1,4 +1,4 @@
-# ShopPromotion
+# SeasonPass
 
 ## Introduction
 
