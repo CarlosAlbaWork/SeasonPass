@@ -1,66 +1,35 @@
-## Foundry
+# ShopPromotion
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+## Introduction
 
-Foundry consists of:
+As far as I know, there is no sports team in the world that uses blockchain technology to manage their season passes and tickets. This project aims to allow sports franchises to adopt this innovative technology to improve the management and security of these previously mentioned products
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+Blockchain technology offers numerous advantages, including transparency, security, and the potential to eliminate intermediaries in the ticket buying and selling process. With this system, we seek to transform the experience for both sports teams and their fans, ensuring a more efficient and reliable process. Furthermore, having the data stored on blockchain allows for these Sport Teams to interact with the full blockchain ecosystem (Creating NFTs from the team, financial services, creating a DAO...)
 
-## Documentation
 
-https://book.getfoundry.sh/
+## Idea
 
-## Usage
+Develop some Smart Contracts that manage this Information:
 
-### Build
+## SeasonPass.sol
+Manages the Season Tickets (Tickets where the seat is saved for this person for the whole season)
 
-```shell
-$ forge build
-```
+## TicketManager.sol
+Manages Tickets to every match
 
-### Test
+### Advantages
 
-```shell
-$ forge test
-```
+- Security: Blockchain's decentralized nature ensures that tickets cannot be duplicated or counterfeited, protecting both the team and the fans.
+- Immutable Records: Once a transaction is recorded on the blockchain, it cannot be altered, ensuring the integrity of ticket ownership and preventing disputes.
+- Elimination of Intermediaries: By using blockchain, teams can sell tickets directly to fans, reducing additional fees and ensuring fair pricing.
+- Enhanced Fan Experience: Infinite ways to interact with the fans using blockchain technology.
 
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+### Disadvantages
+- Depending on the chain deployed, might be very costly to update the contract
+- Elderly people might get confused even if there´s only 1 simple step to create the address.
+- Maybe difficult in some countries to declare the benefits to their tax office.
+  
+## RoadMap
+- Testing both contracts
+- Developing a simple App connected to metamask
+- End!!!!!!
