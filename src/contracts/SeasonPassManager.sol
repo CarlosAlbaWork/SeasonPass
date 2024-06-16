@@ -27,6 +27,7 @@ contract SeasonPassManager is Ownable {
     error SeasonPass_NotEnoughETHSent();
     error SeasonPass_SeasonPassNotRenewed();
     error SeasonPass_MatchEnteredBefore();
+    error SeasonPass_TransferFailed();
 
     /////////////////////////////////////////////////////////////////////////////////
     /////////////////////// STRUCTS /////////////////////////////////////////////////
@@ -447,6 +448,13 @@ contract SeasonPassManager is Ownable {
     /////////////////////////////////////////////////////////////////////////////////
     /////////////////////// GETTERS /////////////////////////////////////////////////
     /////////////////////////////////////////////////////////////////////////////////
+
+    function transferMoney() external onlyOwner {
+        (bool success,) = msg.sender.call{value: address(this).balance}("");
+        if (!success) {
+            revert SeasonPass_TransferFailed();
+        }
+    }
 
     function getNumberOfSympathizer() public view returns (uint256) {
         return numberOfSympathizer;

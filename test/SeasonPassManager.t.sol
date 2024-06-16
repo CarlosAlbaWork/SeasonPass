@@ -44,7 +44,7 @@ contract SeasonPassManagerTest is Test {
 
     function setUp() public {
         DeploySeasonPassManager deployer = new DeploySeasonPassManager();
-        (seasonPassManager) = deployer.run();
+        (seasonPassManager,) = deployer.run();
     }
 
     function beforeEach() public {
